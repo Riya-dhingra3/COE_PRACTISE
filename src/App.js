@@ -16,6 +16,8 @@ const StickyHeader = () => {
       }
     };
 
+    // aman
+
     window.addEventListener("scroll", handleScroll);
 
     // Clean up event listener on component unmount
