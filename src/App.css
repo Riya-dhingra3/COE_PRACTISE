@@ -1,32 +1,95 @@
-
-/* Basic styling for the sticky header */
-.sticky-header {
-  position: -webkit-sticky; /* For Safari */
-  position: sticky;
-  top: 0;
-  background-color: #333;
-  color: white;
-  padding: 20px;
-  font-size: 20px;
-  z-index: 1000; /* Ensure it stays on top */
-  box-shadow: 0 4px 2px -2px gray;
-  transition: all 0.3s ease-in-out;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-/* Shrink the header or apply different styling when sticky */
-.sticky-header.sticky {
-  background-color: #222;
-  padding: 10px; /* Shrink padding */
-  font-size: 18px;
+header {
+  box-shadow: 0px 10px 15px -3px #ddd, 0 4px 6px -2px #ddd;
+  color: #000;
 }
 
-/* Styling for the content area */
-.content {
-  padding: 20px;
-  background-color: #f9f9f9;
-  height: 2000px; /* Make the content long enough to scroll */
+.nav-area {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  padding: 10px 20px;
 }
 
-p {
-  margin-bottom: 20px;
+.logo {
+  text-decoration: none;
+  font-size: 25px;
+  color: inherit;
+  margin-right: 20px;
+}
+
+.main-nav .menus {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.main-nav .menu-items {
+  position: relative; /* Ensure submenu items are positioned relative to this */
+  font-size: 16px;
+}
+
+.main-nav .menu-items a {
+  display: block;
+  font-size: inherit;
+  color: inherit;
+  text-decoration: none;
+  padding: 0.7rem 1rem;
+}
+
+.main-nav .menu-items button {
+  display: flex;
+  align-items: center;
+  color: inherit;
+  font-size: inherit;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  width: 100%;
+  padding: 0.7rem 1rem;
+}
+
+.main-nav .dropdown {
+  position: absolute;
+  left: 10%; /* Move dropdown to the right */
+  top: 5; /* Align it to the top of the parent menu item */
+  box-shadow: 0px 10px 15px -3px #ddd, 0 4px 6px -2px #ddd;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  list-style: none;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  display: none; /* Hidden by default */
+}
+
+.main-nav .dropdown.show {
+  display: block; /* Show when dropdown state is true */
+}
+
+
+/* Adjusting submenu styles */
+.main-nav .dropdown .dropdown-submenu {
+  position: absolute; /* Absolute positioning for submenus */
+  top: 0; /* Align with the top of the parent dropdown */
+  left: 100%; /* Position submenu to the right of its parent dropdown */
+  display: none; /* Hidden by default */
+}
+
+.main-nav .dropdown .dropdown-submenu.show {
+  display: block; /* Show submenu on hover */
+}
+
+.main-nav .arrow::after {
+  content: "";
+  display: inline-block;
+  margin-left: 0.28rem;
+  vertical-align: 0.09rem;
+  border-top: 0.42em solid transparent;
+  border-right: 0.32em solid transparent;
+  border-left: 0.32em solid transparent;
 }
