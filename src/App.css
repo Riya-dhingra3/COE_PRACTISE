@@ -1,95 +1,85 @@
+/* Base styles */
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-header {
-  box-shadow: 0px 10px 15px -3px #ddd, 0 4px 6px -2px #ddd;
-  color: #000;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
 }
 
-.nav-area {
-  display: flex;
-  align-items: center;
-  margin: auto;
-  padding: 10px 20px;
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  text-align: center;
 }
 
-.logo {
-  text-decoration: none;
-  font-size: 25px;
-  color: inherit;
-  margin-right: 20px;
+h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
 }
 
-.main-nav .menus {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  list-style: none;
-}
-
-.main-nav .menu-items {
-  position: relative; /* Ensure submenu items are positioned relative to this */
-  font-size: 16px;
-}
-
-.main-nav .menu-items a {
-  display: block;
-  font-size: inherit;
-  color: inherit;
-  text-decoration: none;
-  padding: 0.7rem 1rem;
-}
-
-.main-nav .menu-items button {
-  display: flex;
-  align-items: center;
-  color: inherit;
-  font-size: inherit;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  width: 100%;
-  padding: 0.7rem 1rem;
-}
-
-.main-nav .dropdown {
-  position: absolute;
-  left: 10%; /* Move dropdown to the right */
-  top: 5; /* Align it to the top of the parent menu item */
-  box-shadow: 0px 10px 15px -3px #ddd, 0 4px 6px -2px #ddd;
-  min-width: 10rem;
-  padding: 0.5rem 0;
-  list-style: none;
-  background-color: #fff;
-  border-radius: 0.5rem;
-  display: none; /* Hidden by default */
-}
-
-.main-nav .dropdown.show {
-  display: block; /* Show when dropdown state is true */
-}
-
-
-/* Adjusting submenu styles */
-.main-nav .dropdown .dropdown-submenu {
-  position: absolute; /* Absolute positioning for submenus */
-  top: 0; /* Align with the top of the parent dropdown */
-  left: 100%; /* Position submenu to the right of its parent dropdown */
-  display: none; /* Hidden by default */
-}
-
-.main-nav .dropdown .dropdown-submenu.show {
-  display: block; /* Show submenu on hover */
-}
-
-.main-nav .arrow::after {
-  content: "";
+/* Dropdown styling */
+.dropdown {
+  position: relative;
   display: inline-block;
-  margin-left: 0.28rem;
-  vertical-align: 0.09rem;
-  border-top: 0.42em solid transparent;
-  border-right: 0.32em solid transparent;
-  border-left: 0.32em solid transparent;
+  margin: 20px;
+}
+
+.dropdown-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dropdown-btn:hover {
+  background-color: #f0f0f0;
+  border-color: #bbb;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  border-radius: 4px;
+  overflow: hidden;
+  padding: 0;
+  list-style: none;
+  margin-top: 8px;
+}
+
+.dropdown-content li {
+  padding: 10px 16px;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-content li:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown-content li:not(:last-child) {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.dropdown-content.show {
+  display: block;
+}
+
+/* Active state styles */
+.active-dropdown {
+  background-color: #f0f0f0;
+  border-color: #bbb;
 }
